@@ -1,15 +1,12 @@
 package org.example.stepDefs;
-
-import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.asserts.SoftAssert;
 
-import java.awt.font.TextMeasurer;
-import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     public static WebDriver driver;
@@ -18,10 +15,12 @@ public class Hooks {
 
     @BeforeAll
     public static void OpenBrowser(){
-        System.setProperty("webdriver.chrom.driver", "C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2022.3.1\\FinalProject\\src\\main\\resources\\chromedriver.exe");
+       /* System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();*/
+        ChromeOptions chromeOptions = new ChromeOptions();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://demo.nopcommerce.com/");
     }
     @AfterAll

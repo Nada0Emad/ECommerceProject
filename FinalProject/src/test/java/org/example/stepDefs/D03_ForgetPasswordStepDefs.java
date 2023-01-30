@@ -30,7 +30,7 @@ public class D03_ForgetPasswordStepDefs {
         forgetPassword.forgetPassword().click();
         String actual = driver.getCurrentUrl();
         String expected = "https://demo.nopcommerce.com/passwordrecovery";
-        Assert.assertEquals(actual.contains(expected),true);}
+        Assert.assertTrue(actual.contains(expected));}
 
     @And("^user enter email \"(.*)\" again$")
     public void reEnterEmail(String email){

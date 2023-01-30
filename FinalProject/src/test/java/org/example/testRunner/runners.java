@@ -12,7 +12,7 @@ plugin = {"pretty",
         "json:target/cucumber.json",
         "junit:target/cukes.xml",
         "return:target/rerun.txt"},
-        tags = "@smoke")
+        tags = "@Smoke")
 
 public class runners extends AbstractTestNGCucumberTests {
 }

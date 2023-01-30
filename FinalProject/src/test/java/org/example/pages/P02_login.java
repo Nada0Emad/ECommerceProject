@@ -26,8 +26,7 @@ public class P02_login {
         return Hooks.driver.findElement(By.cssSelector("a[class=\"ico-account\"]"));
     }
     public String currentUrl(){
-        String currentUrl = Hooks.driver.getCurrentUrl();
-        return currentUrl;
+        return Hooks.driver.getCurrentUrl();
     }
 
     public WebElement inValidEmail(){
